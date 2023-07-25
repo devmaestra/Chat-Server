@@ -1,2 +1,4 @@
 const router = require('express').Router();
-const Rooms = require('../models/room.model');
+const Room = require('../models/room.model');
+
+module.exports = router;
