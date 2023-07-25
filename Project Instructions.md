@@ -64,12 +64,12 @@ Server
 Ticket
 Spin Up: #U5_01
 
-Application should have all depenedencies associated:
+%Application should have all depenedencies associated:
 dotenv, express, jsonwebtoken, bcrypt, mongoose, and cors.package.json should detail within the description the team members names.
-nodemon should be a devDependency
-database connection should be in a separate file db.js.
-There should be an example.env to detail what environmental variables are associated within the .env.
-node_modules and the .env should not be a part of the GitHub repo.
+%nodemon should be a devDependency
+%database connection should be in a separate file db.js.
+%There should be an example.env to detail what environmental variables are associated within the .env.
+%node_modules and the .env should not be a part of the GitHub repo.
 Models:
 
 Each collection requires a schema associated with this application. There will be:
