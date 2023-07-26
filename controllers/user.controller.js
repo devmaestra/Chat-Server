@@ -31,6 +31,5 @@ router.post('/signup', async (req, res) => {
     }
 
 }); 
-// ready for ticket 4!
 
 module.exports = router;
