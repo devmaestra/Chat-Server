@@ -9,7 +9,7 @@ router.post('/signup', async (req, res) => {
     try {
         
         const user = new User({
-            userName: req.body.user,
+            username: req.body.user,
             email: req.body.email,
             password: bcrypt.hashSync(req.body.password, 13)
         });
@@ -53,7 +53,6 @@ router.post('/login', async (req, res) => {
         })
     }
 })
-
 
 
 module.exports = router;
