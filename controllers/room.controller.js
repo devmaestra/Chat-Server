@@ -1,10 +1,11 @@
 const router = require('express').Router();
 const Room = require('../models/room.model');
+const validateSession = require('../middleware/validate-session');
 
 //Create a Room:
-router.post('/', async (req,res) => {
+router.post('/', validateSession, async (req,res) => {
     try {
-            const { title, description, messages, owner_id } = req.body;
+            const { title, description, messages } = req.body;
 
             const room = new Room({
                 title, description, messages, owner_id: req.user.id
