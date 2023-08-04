@@ -5,13 +5,12 @@ const validateSession = require('../middleware/validate-session');
 //CREATE A MESSAGE
 router.post('/', validateSession, async (req,res) => {
     try {
-            const { date, text } = req.body;
+            const { date, text, room_id } = req.body;
 
             const message = new Message({
-                date, text, owner_id: req.user.id, room_id: req.room.id
-            });
+                date, text, owner_id: req.user.id, room_id});
     
-            const newMessage = await Message.save();
+            const newMessage = await message.save();
     
             res.status(200).json({
                 newMessage,
@@ -22,7 +21,7 @@ router.post('/', validateSession, async (req,res) => {
             errorResponse(res, err);
         }
     });
-
+// take room id, compare it to all the rooms i have, then push it into messages array in the correct Room Collection
 
 //GET ALL MESSAGES
 router.get('/', async(req, res) => {
@@ -68,9 +67,9 @@ router.patch('/:id', validateSession, async(req, res) => {
 })
 
 //DELETE MESSAGE
-router.delete('/:id', validateSession, async(req, res) => {
+router.delete('/:id/:room_id', validateSession, async(req, res) => {
     try {
-        const { id } = req.params;
+        const { id, room_id } = req.params;
 
         const deleteMessage = await Message.deleteOne({_id: id, owner_id: req.user._id, room_id: req.room._id});
 
@@ -87,3 +86,6 @@ router.delete('/:id', validateSession, async(req, res) => {
     }
 });
 module.exports = router;
+
+// string push
+// string push, garage lesson
