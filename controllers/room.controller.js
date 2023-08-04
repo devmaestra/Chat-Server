@@ -106,4 +106,7 @@ router.delete('/:id', validateSession, async(req, res) => {
         errorResponse(res, err);
     }
 });
+
+//All Room functions operational!
+
 module.exports = router;
