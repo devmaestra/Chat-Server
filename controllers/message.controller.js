@@ -1,33 +1,47 @@
 const router = require('express').Router();
-const Message = require('../models/message.model');
+const { Message, Room } = require('../models/index');
+const { success, error, incomplete } = require('../helpers');
 const validateSession = require('../middleware/validate-session');
 
 //CREATE A MESSAGE
 router.post('/', validateSession, async (req,res) => {
     try {
-            const { date, text, room_id } = req.body;
+            const { date , text, room_id } = req.body;
 
             const message = new Message({
-                date, text, owner_id: req.user.id, room_id});
+                date, text, owner_id: req.user.id, room_id
+            });
     
             const newMessage = await message.save();
-    
+            
+            const forRoom = {
+                date: newMessage.date,
+                text: newMessage.text,
+                id: newMessage.room_id
+            }
+
+            // Attach the message to the corresponding room
+            await Room.findOneAndUpdate(
+                {_id: room_id}, {$push: {messages: forRoom}}
+            );
+            //Response to User whether successful or unsuccessful 
+            newMessage ? success(res, newMessage) : incomplete(res);
+
             res.status(200).json({
                 newMessage,
                 message: `${newMessage.date} new message in your inbox!`
             });
     
         } catch (err) {
-            errorResponse(res, err);
+            error(res, err);
         }
     });
-// take room id, compare it to all the rooms i have, then push it into messages array in the correct Room Collection
 
 //GET ALL MESSAGES
 router.get('/', async(req, res) => {
     try {
 
-        const getAllMessages = await Message.find();
+        const getAllMessages = await message.find();
         
         getAllMessages ?
             res.status(200).json({
@@ -38,7 +52,7 @@ router.get('/', async(req, res) => {
             });
 
     } catch (err) {
-        errorResponse(res, err);
+        error(res, err);
     }
 });
 
@@ -62,7 +76,7 @@ router.patch('/:id', validateSession, async(req, res) => {
         })
 
     } catch (err) {
-        errorResponse(res, err);
+        error(res, err);
     }
 })
 
@@ -82,7 +96,7 @@ router.delete('/:id/:room_id', validateSession, async(req, res) => {
             })
         
     } catch (err) {
-        errorResponse(res, err);
+        error(res, err);
     }
 });
 module.exports = router;
