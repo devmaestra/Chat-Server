@@ -26,4 +26,16 @@ module.exports = {
     incomplete: incompleteResponse
 }
 
-//create success and incomplete
+const incompleteResponse = res => {
+    return(
+        res.status(404).send(
+            "Record unable to be completed."
+        )
+    )
+}
+
+module.exports = {
+    error: errorResponse,
+    success: successResponse,
+    incomplete: incompleteResponse
+}

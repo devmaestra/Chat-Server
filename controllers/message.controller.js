@@ -13,7 +13,7 @@ router.post('/', validateSession, async (req,res) => {
             });
     
             const newMessage = await message.save();
-            
+
             const forRoom = {
                 date: newMessage.date,
                 text: newMessage.text,
@@ -100,6 +100,3 @@ router.delete('/:id/:room_id', validateSession, async(req, res) => {
     }
 });
 module.exports = router;
-
-// string push
-// string push, garage lesson
