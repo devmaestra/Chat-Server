@@ -6,7 +6,7 @@ const validateSession = require('../middleware/validate-session');
 //CREATE A MESSAGE
 router.post('/', validateSession, async (req,res) => {
     try {
-            const { date, text, room_id } = req.body;
+            const { date , text, room_id } = req.body;
 
             const message = new Message({
                 date, text, owner_id: req.user.id, room_id
@@ -19,6 +19,7 @@ router.post('/', validateSession, async (req,res) => {
                 text: newMessage.text,
                 id: newMessage.room_id
             }
+
             // Attach the message to the corresponding room
             await Room.findOneAndUpdate(
                 {_id: room_id}, {$push: {messages: forRoom}}
@@ -35,7 +36,6 @@ router.post('/', validateSession, async (req,res) => {
             error(res, err);
         }
     });
-
 
 //GET ALL MESSAGES
 router.get('/', async(req, res) => {
