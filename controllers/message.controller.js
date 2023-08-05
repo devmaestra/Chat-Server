@@ -81,9 +81,9 @@ router.patch('/:id', validateSession, async(req, res) => {
 })
 
 //DELETE MESSAGE
-router.delete('/:id', validateSession, async(req, res) => {
+router.delete('/:id/:room_id', validateSession, async(req, res) => {
     try {
-        const { id } = req.params;
+        const { id, room_id } = req.params;
 
         const deleteMessage = await Message.deleteOne({_id: id, owner_id: req.user._id, room_id: req.room._id});
 
@@ -100,3 +100,6 @@ router.delete('/:id', validateSession, async(req, res) => {
     }
 });
 module.exports = router;
+
+// string push
+// string push, garage lesson
