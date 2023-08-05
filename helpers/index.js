@@ -25,3 +25,4 @@ module.exports = {
     success: successResponse,
     incomplete: incompleteResponse
 }
+
