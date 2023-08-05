@@ -36,6 +36,10 @@ router.post('/', validateSession, async (req,res) => {
             error(res, err);
         }
     });
+<<<<<<<<< Temporary merge branch 1
+=========
+
+>>>>>>>>> Temporary merge branch 2
 
 //GET ALL MESSAGES
 router.get('/', async(req, res) => {
