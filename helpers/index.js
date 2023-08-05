@@ -25,17 +25,3 @@ module.exports = {
     success: successResponse,
     incomplete: incompleteResponse
 }
-
-const incompleteResponse = res => {
-    return(
-        res.status(404).send(
-            "Record unable to be completed."
-        )
-    )
-}
-
-module.exports = {
-    error: errorResponse,
-    success: successResponse,
-    incomplete: incompleteResponse
-}
