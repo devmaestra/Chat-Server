@@ -4,8 +4,24 @@ const errorResponse = (res, err) => {
     )
 }
 
-module.exports = {
-    error: errorResponse
+const successResponse = (res, results) => {
+    return(
+        res.status(200).json({
+            results
+        })
+    );
 }
 
-//create success and incomplete
+const incompleteResponse = res => {
+    return(
+        res.status(404).send(
+            "Record unable to be completed."
+        )
+    )
+}
+
+module.exports = {
+    error: errorResponse,
+    success: successResponse,
+    incomplete: incompleteResponse
+}

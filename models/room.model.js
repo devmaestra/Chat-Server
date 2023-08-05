@@ -10,7 +10,7 @@ const RoomSchema = new mongoose.Schema({
         type: String,
     },
     messages: {
-        type: Array,
+        type: [Object],
     },
     owner_id:{
         type: String
