@@ -13,7 +13,20 @@ router.post('/', validateSession, async (req,res) => {
             });
     
             const newMessage = await message.save();
-    
+
+            const forRoom = {
+                date: newMessage.date,
+                text: newMessage.text,
+                id: newMessage.room_id
+            }
+
+            // Attach the message to the corresponding room
+            await Room.findOneAndUpdate(
+                {_id: room_id}, {$push: {messages: forRoom}}
+            );
+            //Response to User whether successful or unsuccessful 
+            newMessage ? success(res, newMessage) : incomplete(res);
+
             res.status(200).json({
                 newMessage,
                 message: `${newMessage.date} new message in your inbox!`
@@ -23,7 +36,10 @@ router.post('/', validateSession, async (req,res) => {
             error(res, err);
         }
     });
-// take room id, compare it to all the rooms i have, then push it into messages array in the correct Room Collection
+<<<<<<<<< Temporary merge branch 1
+=========
+
+>>>>>>>>> Temporary merge branch 2
 
 //GET ALL MESSAGES
 router.get('/', async(req, res) => {
