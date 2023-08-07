@@ -36,16 +36,12 @@ router.post('/', validateSession, async (req,res) => {
             error(res, err);
         }
     });
-<<<<<<<<< Temporary merge branch 1
-=========
 
->>>>>>>>> Temporary merge branch 2
-
-//GET ALL MESSAGES
-router.get('/', async(req, res) => {
+//GET ALL MESSAGES PER ROOM
+router.get('/:id', async(req, res) => {
     try {
 
-        const getAllMessages = await message.find();
+        const getAllMessages = await Message.find({room_id: id});
         
         getAllMessages ?
             res.status(200).json({
@@ -60,13 +56,14 @@ router.get('/', async(req, res) => {
     }
 });
 
+
 //UPDATE MESSAGE
 router.patch('/:id', validateSession, async(req, res) => {
     try{
 
         const { id } = req.params;
 
-        const filter = { _id: id, owner_id: req.user._id, room_id: req.room._id}
+        const filter = { _id: id, owner_id: req.user._id }
 
         const info = req.body;
         
@@ -85,11 +82,11 @@ router.patch('/:id', validateSession, async(req, res) => {
 })
 
 //DELETE MESSAGE
-router.delete('/:id/:room_id', validateSession, async(req, res) => {
+router.delete('/:id', validateSession, async(req, res) => {
     try {
-        const { id, room_id } = req.params;
+        const { id } = req.params;
 
-        const deleteMessage = await Message.deleteOne({_id: id, owner_id: req.user._id, room_id: req.room._id});
+        const deleteMessage = await Message.deleteOne({_id: id, owner_id: req.user._id});
 
         deleteMessage.deletedCount ?
             res.status(200).json({
