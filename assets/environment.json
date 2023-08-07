@@ -1,0 +1,39 @@
+{
+	"id": "c24d49af-eda9-4cb0-8cc2-c8fb7c1c38e6",
+	"name": "Chat-Application",
+	"values": [
+		{
+			"key": "URL",
+			"value": "localhost:4005",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "ROOMID",
+			"value": "",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "MESSAGEID",
+			"value": "",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "OWNERID",
+			"value": "",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "JWT",
+			"value": "",
+			"type": "default",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2023-08-07T00:09:12.145Z",
+	"_postman_exported_using": "Postman/10.16.8-230804-0901"
+}

@@ -1,0 +1,366 @@
+
+    {
+      "name": "Chat-Application",
+      "item": [
+        {
+          "name": "SignUp",
+          "id": "f1001dcb-6e2c-42f5-ba56-079487e2cdca",
+          "protocolProfileBehavior": { "disableBodyPruning": true },
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n   \"user\": \"Susie Sheep\",\n   \"email\": \"babaSusie@email.com\",\n   \"password\": \"test\"\n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "localhost:4005/user/signup",
+              "host": ["localhost"],
+              "port": "4005",
+              "path": ["user", "signup"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Login",
+          "id": "ed77e2c0-4949-48d7-a745-1627229d730f",
+          "protocolProfileBehavior": { "disableBodyPruning": true },
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"email\": \"babaSusie@email.com\",\n    \"password\": \"test\"\n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "localhost:4005/user/login",
+              "host": ["localhost"],
+              "port": "4005",
+              "path": ["user", "login"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Intro Room",
+          "id": "05ed1de3-d783-41f2-ae38-96d663195378",
+          "protocolProfileBehavior": { "disableBodyPruning": true },
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Authorization", "value": "{{JWT}}", "type": "text" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"title\": \"Introductions\",\n    \"description\": \"Introduce yourself to the other users!\",\n    \"messages\": []\n    \n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "{{URL}}/room/",
+              "host": ["{{URL}}"],
+              "path": ["room", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Music Room",
+          "id": "d9580f79-3f98-4a61-af1d-8222de15abb0",
+          "protocolProfileBehavior": { "disableBodyPruning": true },
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Authorization", "value": "{{JWT}}", "type": "text" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"title\": \"Music Room\",\n    \"description\": \"All things music\",\n    \"messages\": []\n    \n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "{{URL}}/room/",
+              "host": ["{{URL}}"],
+              "path": ["room", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Code Room",
+          "id": "6dfa0d00-8396-40c1-a75a-e0887537b813",
+          "protocolProfileBehavior": { "disableBodyPruning": true },
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Authorization", "value": "{{JWT}}", "type": "text" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"title\": \"Code Room\",\n    \"description\": \"Developing Your Future\",\n    \"messages\": []\n    \n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "{{URL}}/room/",
+              "host": ["{{URL}}"],
+              "path": ["room", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Cat Room",
+          "id": "908413c3-3e42-4e04-addb-2262e61f12c5",
+          "protocolProfileBehavior": { "disableBodyPruning": true },
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Authorization", "value": "{{JWT}}", "type": "text" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"title\": \"Cat Room\",\n    \"description\": \"Furball Delight\",\n    \"messages\": []\n    \n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "{{URL}}/room/",
+              "host": ["{{URL}}"],
+              "path": ["room", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "To-Be Deleted Room",
+          "id": "33dd821e-c0a1-4524-8544-c96aea7a2659",
+          "protocolProfileBehavior": { "disableBodyPruning": true },
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Authorization", "value": "{{JWT}}", "type": "text" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"title\": \"To-Be Deleted Room\",\n    \"description\": \"Doomed from its creation\",\n    \"messages\": []\n    \n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "{{URL}}/room/",
+              "host": ["{{URL}}"],
+              "path": ["room", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Job Room",
+          "id": "e07af3bc-35b3-480b-97a2-52a99f717f59",
+          "protocolProfileBehavior": { "disableBodyPruning": true },
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Authorization", "value": "{{JWT}}", "type": "text" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"title\": \"Job Room\",\n    \"description\": \"Job Postings Here!\",\n    \"messages\": []\n    \n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "{{URL}}/room/",
+              "host": ["{{URL}}"],
+              "path": ["room", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "One Room",
+          "id": "c00ca740-9e66-4d3c-aede-0546123d2a97",
+          "protocolProfileBehavior": { "disableBodyPruning": true },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "{{URL}}/room/:",
+              "host": ["{{URL}}"],
+              "path": ["room", ":"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "All Rooms",
+          "id": "85e9d5f1-5245-4106-9af5-ed8d5a86ad26",
+          "protocolProfileBehavior": { "disableBodyPruning": true },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"title\": \"Super Hero Movie\",\n    \"genre\": \"Action\",\n    \"rating\": \"PG-13\",\n    \"length\": 120, \n    \"releaseYear\": 2020 \n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "{{URL}}/room/",
+              "host": ["{{URL}}"],
+              "path": ["room", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update A Room",
+          "id": "ac12b2ec-fbe9-40c0-bd3b-d13d96dbd1b5",
+          "protocolProfileBehavior": { "disableBodyPruning": true },
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"title\": \"Super Hero Movie\",\n    \"genre\": \"Action\",\n    \"rating\": \"PG-13\",\n    \"length\": 120, \n    \"releaseYear\": 2020 \n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "{{URL}}/room/",
+              "host": ["{{URL}}"],
+              "path": ["room", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete One Room",
+          "id": "d15ca782-161a-482d-9048-4f7027621700",
+          "protocolProfileBehavior": { "disableBodyPruning": true },
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"title\": \"Super Hero Movie\",\n    \"genre\": \"Action\",\n    \"rating\": \"PG-13\",\n    \"length\": 120, \n    \"releaseYear\": 2020 \n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "{{URL}}/room/",
+              "host": ["{{URL}}"],
+              "path": ["room", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Message",
+          "id": "373c3d86-ab04-47f5-8d9c-347b1d662b1e",
+          "protocolProfileBehavior": { "disableBodyPruning": true },
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Authorization", "value": "", "type": "text" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"date\": \"1-1-2023\",\n    \"text\": \"Introduce yourself to the other users!\"\n    \n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "{{URL}}/message/",
+              "host": ["{{URL}}"],
+              "path": ["message", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "All Messages",
+          "id": "bfeabff9-d518-4c2a-8d5a-2802b964c060",
+          "protocolProfileBehavior": { "disableBodyPruning": true },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "{{URL}}/message/{{ROOMID}}",
+              "host": ["{{URL}}"],
+              "path": ["message", "{{ROOMID}}"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "All Messages Per Room",
+          "id": "834873e9-a8b8-40b2-96c9-a05b5ac1b6c2",
+          "protocolProfileBehavior": { "disableBodyPruning": true },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"room_id\": \"64c6ec89e3bcb6e313f4123c\"\n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "{{URL}}/room/64c6ec89e3bcb6e313f4123c/",
+              "host": ["{{URL}}"],
+              "path": ["room", "64c6ec89e3bcb6e313f4123c", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update A Message",
+          "id": "656e4b77-4d69-4b78-832f-9c271c8b39f8",
+          "protocolProfileBehavior": { "disableBodyPruning": true },
+          "request": {
+            "method": "PATCH",
+            "header": [
+              { "key": "Authorization", "value": "{{JWT}}", "type": "text" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n   \"text\": \"Music is no longer life..\"\n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "{{URL}}/message/64d02a52508db3239f1b69b5",
+              "host": ["{{URL}}"],
+              "path": ["message", "64d02a52508db3239f1b69b5"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete One Message",
+          "id": "b4a7aa70-aafb-4821-8eb3-2acef489aed0",
+          "protocolProfileBehavior": { "disableBodyPruning": true },
+          "request": {
+            "method": "DELETE",
+            "header": [
+              { "key": "Authorization", "value": "{{JWT}}", "type": "text" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "{{URL}}/message/64d02d320f02760e261a71c2",
+              "host": ["{{URL}}"],
+              "path": ["message", "64d02d320f02760e261a71c2"]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "40860e49-010a-4ee5-9e39-3df491c5ca29"
+    }
+    
